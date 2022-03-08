@@ -1,0 +1,40 @@
+$tableColor: white;
+$tableRadius: 0.5rem !important;
+$tableBorder: 1px solid gray !important;
+$tableBg: #0B5ED7 !important;
+$tableTheadColor: white;
+
+table {
+  border-collapse: separate;
+  border-radius: $tableRadius;
+  border-spacing: 0;
+  border-style: none;
+  border: $tableBorder;
+  background-color: $tableColor;
+}
+
+td, th {
+  padding: 1.5rem !important;
+}
+
+tr:last-child {
+  border-bottom: 1px solid transparent;
+}
+
+tr:first-child {
+  border-bottom: $tableBorder;
+}
+
+thead {
+  background-color: $tableBg;
+  color: $tableTheadColor;
+  text-align: left;
+}
+
+thead th:first-child {
+  border-top-left-radius: $tableRadius;
+}
+
+thead th:last-child {
+  border-top-right-radius: $tableRadius;
+}
