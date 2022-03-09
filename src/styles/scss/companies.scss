@@ -4,6 +4,22 @@ $tableBorder: 1px solid gray !important;
 $tableBg: #0B5ED7 !important;
 $tableTheadColor: white;
 
+// Source mixin
+@mixin make-container($padding-x: 2rem, $padding-y: 1rem) {
+  max-width: 800px;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Usage
+.container-table {
+  @include make-container();
+}
+
 table {
   border-collapse: separate;
   border-radius: $tableRadius;
