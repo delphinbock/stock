@@ -1,44 +1,44 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // CSS
-import '../styles/scss/footer.scss';
+import "../styles/scss/footer.scss";
 
 // Sidebar
 const Footer = () => {
+  // States
+  const [fixedFooter, setFixedFooter] = useState(false);
 
-    // States
-    const [fixedFooter, setFixedFooter] = useState(false);
+  useEffect(() => {
+    // Inner frame height
+    let intFrameHeight = window.innerHeight;
 
-    useEffect(() => {
+    // Body's height
+    let body: HTMLBodyElement | null = document.querySelector("body");
 
-        // Inner frame height
-        var intFrameHeight = window.innerHeight;
+    if (body !== null) {
+      let height = body.clientHeight;
 
-        // Body's height
-        let body: HTMLBodyElement | null = document.querySelector('body');
+      if (height > intFrameHeight) {
+        setFixedFooter(false);
+      } else {
+        setFixedFooter(true);
+      }
+    }
+  }, []);
 
-        if (body !== null) {
-            let height = body.clientHeight;
-
-            if (height > intFrameHeight) {
-                setFixedFooter(false);
-            } else {
-                setFixedFooter(true);
-            }
-        }
-    }, [])
-
-    return (
-        <>
-            <footer id="footer" className={`${fixedFooter ? 'fixedFooter' : 'noFixedFooter'}`}>
-                <div className="footer-copyright text-center py-3">
-                    <div className="container-footer">
-                        &copy; {new Date().getFullYear()} <a href={window.location.origin + '/index.html'}>delphin.bock</a>
-                    </div>
-                </div>
-            </footer>
-        </>
-    );
-}
+  return (
+    <footer
+      id="footer"
+      className={`${fixedFooter ? "fixedFooter" : "noFixedFooter"}`}
+    >
+      <div className="footer-copyright text-center py-3">
+        <div className="container-footer">
+          &copy; {new Date().getFullYear()}{" "}
+          <a href={window.location.origin + "/index.html"}>delphin.bock</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

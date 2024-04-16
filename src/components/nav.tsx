@@ -1,5 +1,3 @@
-import React from "react";
-
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 

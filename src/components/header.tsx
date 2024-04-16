@@ -1,19 +1,12 @@
-import React from 'react';
-
 // Components
 import Nav from "./nav";
 
 // CSS
-import '../styles/scss/header.scss';
+import "../styles/scss/header.scss";
 
 // Sidebar
 const Header = () => {
-
-    return (
-        <>
-            <Nav />
-        </>
-    );
-}
+  return <Nav />;
+};
 
 export default Header;
